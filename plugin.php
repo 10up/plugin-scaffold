@@ -27,8 +27,8 @@ require_once TENUP_SCAFFOLD_INC . 'functions/core.php';
 
 
 // Activation/Deactivation
-register_activation_hook( __FILE__, '\TenUp\<%= namespace %>\Core\activate' );
-register_deactivation_hook( __FILE__, '\TenUp\<%= namespace %>\Core\deactivate' );
+register_activation_hook( __FILE__, '\TenUp\TenUpScaffold\Core\activate' );
+register_deactivation_hook( __FILE__, '\TenUp\TenUpScaffold\Core\deactivate' );
 
 // Bootstrap
-TenUp\<%= namespace %>\Core\setup();
+TenUp\TenUpScaffold\Core\setup();
