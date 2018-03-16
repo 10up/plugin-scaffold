@@ -1,0 +1,21 @@
+{
+  "name": "10up/tenup-plugin-scaffold",
+  "description": "Project Description",
+  "authors": [
+    {
+      "name": "Author",
+      "email": "email@10up.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "TenUpThemeScaffold\\": "includes/classes/"
+    }
+  },
+  "require-dev": {
+    "10up/wp_mock": "dev-dev"
+  }
+}

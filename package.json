@@ -1,0 +1,19 @@
+{
+  "name": "tenup-plugin-scaffold",
+  "version": "1.0.0",
+  "description": "Project Description",
+  "main": "index.js",
+  "author": {
+    "name": "10up",
+    "email": "info@10up.com",
+    "url": "https://10up.com",
+    "role": "developer"
+  },
+  "scripts": {
+    "test": "phpunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://project-git-repo.tld"
+  }
+}
