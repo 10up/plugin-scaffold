@@ -10,12 +10,6 @@
  * Domain Path: /languages
  */
 
-/**
- * Built using yo wp-make:plugin
- * Copyright (c) 2015 10up, LLC
- * https://github.com/10up/generator-wp-make
- */
-
 // Useful global constants
 define( 'TENUP_SCAFFOLD_VERSION', '0.1.0' );
 define( 'TENUP_SCAFFOLD_URL',     plugin_dir_url( __FILE__ ) );
