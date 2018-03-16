@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: <%= projectTitle %>
- * Plugin URI:  <%= projectHome %>
- * Description: <%= description %>
+ * Plugin Name: TenUpScaffold
+ * Plugin URI:  
+ * Description: 
  * Version:     0.1.0
- * Author:      <%= authorName %>
- * Author URI:  <%= authorUrl %>
- * Text Domain: <%= funcPrefix %>
+ * Author:      10up
+ * Author URI:  https://10up.com
+ * Text Domain: tenup-scaffold
  * Domain Path: /languages
  */
 
@@ -17,13 +17,13 @@
  */
 
 // Useful global constants
-define( '<%= funcPrefix.toUpperCase() %>_VERSION', '0.1.0' );
-define( '<%= funcPrefix.toUpperCase() %>_URL',     plugin_dir_url( __FILE__ ) );
-define( '<%= funcPrefix.toUpperCase() %>_PATH',    dirname( __FILE__ ) . '/' );
-define( '<%= funcPrefix.toUpperCase() %>_INC',     <%= funcPrefix.toUpperCase() %>_PATH . 'includes/' );
+define( 'TENUP_SCAFFOLD_VERSION', '0.1.0' );
+define( 'TENUP_SCAFFOLD_URL',     plugin_dir_url( __FILE__ ) );
+define( 'TENUP_SCAFFOLD_PATH',    dirname( __FILE__ ) . '/' );
+define( 'TENUP_SCAFFOLD_INC',     TENUP_SCAFFOLD_PATH . 'includes/' );
 
 // Include files
-require_once <%= funcPrefix.toUpperCase() %>_INC . 'functions/core.php';
+require_once TENUP_SCAFFOLD_INC . 'functions/core.php';
 
 
 // Activation/Deactivation

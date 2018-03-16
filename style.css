@@ -1,6 +1,3 @@
 /**
- * <%= projectTitle %>
- * <%= projectHome %>
- *
- * Copyright (c) <%= new Date().getFullYear() %> <%= authorName %>
+ * 10up Scaffold
  */

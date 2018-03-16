@@ -17,7 +17,7 @@ function setup() {
 	add_action( 'init', $n( 'i18n' ) );
 	add_action( 'init', $n( 'init' ) );
 
-	do_action( '<%= funcPrefix %>_loaded' );
+	do_action( 'tenup_scaffold_loaded' );
 }
 
 /**
@@ -32,9 +32,9 @@ function setup() {
  * @return void
  */
 function i18n() {
-	$locale = apply_filters( 'plugin_locale', get_locale(), '<%= funcPrefix %>' );
-	load_textdomain( '<%= funcPrefix %>', WP_LANG_DIR . '/<%= funcPrefix %>/<%= funcPrefix %>-' . $locale . '.mo' );
-	load_plugin_textdomain( '<%= funcPrefix %>', false, plugin_basename( <%= funcPrefix.toUpperCase() %>_PATH ) . '/languages/' );
+	$locale = apply_filters( 'plugin_locale', get_locale(), 'tenup-scaffold' );
+	load_textdomain( 'tenup-scaffold', WP_LANG_DIR . '/tenup-scaffold/tenup-scaffold-' . $locale . '.mo' );
+	load_plugin_textdomain( 'tenup-scaffold', false, plugin_basename( TENUP_SCAFFOLD_PATH ) . '/languages/' );
 }
 
 /**
@@ -45,7 +45,7 @@ function i18n() {
  * @return void
  */
 function init() {
-	do_action( '<%= funcPrefix %>_init' );
+	do_action( 'tenup_scaffold_init' );
 }
 
 /**

@@ -1,7 +1,7 @@
 {
-  "name": "tenup-plugin-scaffold",
+  "name": "tenup-scaffold",
   "version": "1.0.0",
-  "description": "Project Description",
+  "description": "10up Scaffold",
   "main": "index.js",
   "author": {
     "name": "10up",
