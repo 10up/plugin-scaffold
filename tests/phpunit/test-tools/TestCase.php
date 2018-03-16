@@ -1,6 +1,6 @@
 <?php
 
-namespace TenUp\<%= namespace %>;
+namespace TenUp\TenUpScaffold;
 
 use PHPUnit_Framework_TestResult;
 use Text_Template;
