@@ -1,10 +1,10 @@
 {
-  "name": "10up/tenup-plugin-scaffold",
-  "description": "Project Description",
+  "name": "10up/tenup-scaffold",
+  "description": "10up Scaffold",
   "authors": [
     {
       "name": "Author",
-      "email": "email@10up.com"
+      "email": "info@10up.com"
     }
   ],
   "require": {
@@ -12,7 +12,7 @@
   },
   "autoload": {
     "psr-4": {
-      "TenUpThemeScaffold\\": "includes/classes/"
+      "TenUpScaffold\\": "includes/classes/"
     }
   },
   "require-dev": {
