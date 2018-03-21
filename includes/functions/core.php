@@ -72,3 +72,43 @@ function activate() {
 function deactivate() {
 
 }
+
+/**
+ * Enqueue scripts for front-end.
+ *
+ * @uses wp_enqueue_script() to load front end scripts.
+ *
+ * @since 0.1.0
+ *
+ * @return void
+ */
+function scripts() {
+
+	wp_enqueue_script(
+		'frontend',
+		TENUP_SCAFFOLD_TEMPLATE_URL . "/dist/js/frontend.min.js",
+		[],
+		TENUP_SCAFFOLD_VERSION,
+		true
+	);
+
+}
+
+/**
+ * Enqueue styles for front-end.
+ *
+ * @uses wp_enqueue_style() to load front end styles.
+ *
+ * @since 0.1.0
+ *
+ * @return void
+ */
+function styles() {
+
+	wp_enqueue_style(
+		'styles',
+		TENUP_SCAFFOLD_TEMPLATE_URL . "/dist/css/style.min.css",
+		[],
+		TENUP_SCAFFOLD_VERSION
+	);
+}
