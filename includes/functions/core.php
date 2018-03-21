@@ -88,7 +88,7 @@ function scripts() {
 		'frontend',
 		TENUP_SCAFFOLD_TEMPLATE_URL . "/dist/js/frontend.min.js",
 		[],
-		false,
+		TENUP_SCAFFOLD_VERSION,
 		true
 	);
 
@@ -108,6 +108,7 @@ function styles() {
 	wp_enqueue_style(
 		'styles',
 		TENUP_SCAFFOLD_TEMPLATE_URL . "/dist/css/style.min.css",
-		false
+		[],
+		TENUP_SCAFFOLD_VERSION
 	);
 }
