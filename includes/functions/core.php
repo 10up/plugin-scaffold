@@ -1,5 +1,5 @@
 <?php
-namespace TenUp\dmr\Core;
+namespace TenUp\TenUpScaffold\Core;
 
 /**
  * Default setup routine
