@@ -18,6 +18,8 @@ function setup() {
 	add_action( 'init', $n( 'init' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
+	add_action( 'admin_enqueue_scripts', $n( 'admin_scripts' ) );
+	add_action( 'admin_enqueue_scripts', $n( 'admin_styles' ) );
 	
 	// Editor styles. add_editor_style() doesn't work outside of a theme.
 	add_filter( 'mce_css', $n( 'mce_css' ) );
@@ -79,6 +81,50 @@ function deactivate() {
 }
 
 /**
+ * Generate an URL to a script, taking into account whether SCRIPT_DEBUG is enabled.
+ * 
+ * @since 0.1.0
+ * @param string $script Script file name (no .js extension)
+ * @param string $context Context for the script ('admin', 'frontend', or 'shared')
+ * 
+ * @return string|WP_Error URL
+ */
+function script_url( $script, $context ) {
+
+	if( !in_array( $context, ['admin', 'frontend', 'shared'], true) ) {
+		error_log('Invalid $context specfied in TenUpScaffold script loader.');
+		return '';
+	}
+
+	return ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
+		TENUP_SCAFFOLD_URL . "assets/js/${context}/{$script}.js" :
+		TENUP_SCAFFOLD_URL . "dist/js/${context}.min.js" ;
+	
+}
+
+/**
+ * Generate an URL to a stylesheet, taking into account whether SCRIPT_DEBUG is enabled.
+ * 
+ * @since 0.1.0
+ * @param string $stylesheet Stylesheet file name (no .css extension)
+ * @param string $context Context for the script ('admin', 'frontend', or 'shared')
+ * 
+ * @return string URL
+ */
+function style_url( $stylesheet, $context ) {
+
+	if( !in_array( $context, ['admin', 'frontend', 'shared'], true) ) {
+		error_log('Invalid $context specfied in TenUpScaffold stylesheet loader.');
+		return '';
+	}
+
+	return ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
+		TENUP_SCAFFOLD_URL . "assets/css/${context}/{$stylesheet}.css" :
+		TENUP_SCAFFOLD_URL . "dist/css/${stylesheet}.min.css" ;
+	
+}
+
+/**
  * Enqueue scripts for front-end.
  *
  * @uses wp_enqueue_script() to load front end scripts.
@@ -89,26 +135,34 @@ function deactivate() {
  */
 function scripts() {
 
-	/**
-	 * Generate an URL to a script, taking into account whether SCRIPT_DEBUG is enabled.
-	 * 
-	 * @param string $script Script file name (no .js extension)
-	 * @param string $context Context for the script ('admin', 'frontend', or 'shared')
-	 * 
-	 * @return string|WP_Error URL
-	 */
-	function script_url( $script, $context ) {
+	wp_enqueue_script(
+		'tenup_scaffold_shared',
+		script_url( 'shared', 'shared' ),
+		[],
+		TENUP_SCAFFOLD_VERSION,
+		true
+	);
 
-		if( !in_array( $context, ['admin', 'frontend', 'shared'], true) ) {
-			error_log('Invalid $context specfied in TenUpScaffold script loader.');
-			return '';
-		}
+	wp_enqueue_script(
+		'tenup_scaffold_frontend',
+		script_url( 'frontend', 'frontend' ),
+		[],
+		TENUP_SCAFFOLD_VERSION,
+		true
+	);
 
-		return ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
-			TENUP_SCAFFOLD_URL . "assets/js/${context}/{$script}.js" :
-			TENUP_SCAFFOLD_URL . "dist/js/${context}.min.js" ;
-		
-	}
+}
+
+/**
+ * Enqueue scripts for admin.
+ *
+ * @uses wp_enqueue_script() to load admin scripts.
+ *
+ * @since 0.1.0
+ *
+ * @return void
+ */
+function admin_scripts() {
 
 	wp_enqueue_script(
 		'tenup_scaffold_shared',
@@ -118,24 +172,13 @@ function scripts() {
 		true
 	);
 
-	if( is_admin() ) {
-		wp_enqueue_script(
-			'tenup_scaffold_admin',
-			script_url( 'admin', 'admin' ),
-			[],
-			TENUP_SCAFFOLD_VERSION,
-			true
-		);
-	}
-	else {
-		wp_enqueue_script(
-			'tenup_scaffold_frontend',
-			script_url( 'frontend', 'frontend' ),
-			[],
-			TENUP_SCAFFOLD_VERSION,
-			true
-		);
-	}
+	wp_enqueue_script(
+		'tenup_scaffold_admin',
+		script_url( 'admin', 'admin' ),
+		[],
+		TENUP_SCAFFOLD_VERSION,
+		true
+	);
 
 }
 
@@ -149,27 +192,6 @@ function scripts() {
  * @return void
  */
 function styles() {
-
-	/**
-	 * Generate an URL to a stylesheet, taking into account whether SCRIPT_DEBUG is enabled.
-	 * 
-	 * @param string $stylesheet Stylesheet file name (no .css extension)
-	 * @param string $context Context for the script ('admin', 'frontend', or 'shared')
-	 * 
-	 * @return string|WP_Error URL
-	 */
-	function style_url( $stylesheet, $context ) {
-
-		if( !in_array( $context, ['admin', 'frontend', 'shared'], true) ) {
-			error_log('Invalid $context specfied in TenUpScaffold stylesheet loader.');
-			return '';
-		}
-
-		return ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
-			TENUP_SCAFFOLD_URL . "assets/css/${context}/{$stylesheet}.css" :
-			TENUP_SCAFFOLD_URL . "dist/css/${stylesheet}.min.css" ;
-		
-	}
 
 	wp_enqueue_style(
 		'tenup_scaffold_shared',
@@ -200,6 +222,34 @@ function styles() {
 }
 
 /**
+ * Enqueue styles for admin.
+ *
+ * @uses wp_enqueue_style() to load admin styles.
+ *
+ * @since 0.1.0
+ *
+ * @return void
+ */
+function admin_styles() {
+
+	wp_enqueue_style(
+		'tenup_scaffold_shared',
+		style_url( 'shared-style', 'shared' ),
+		[],
+		TENUP_SCAFFOLD_VERSION
+	);
+
+	wp_enqueue_script(
+		'tenup_scaffold_admin',
+		style_url( 'admin-style', 'admin' ),
+		[],
+		TENUP_SCAFFOLD_VERSION,
+		true
+	);
+	
+}
+
+/**
  * Enqueue editor styles
  * 
  * @since 0.1.0
@@ -213,7 +263,7 @@ function mce_css( $stylesheets ) {
 		return TENUP_SCAFFOLD_URL . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?  
 			"assets/css/admin/editor-style.css" :
 			"dist/css/editor-style.min.css" );
-			
+
 	}
 
 	return $stylesheets . ',' . style_url();
