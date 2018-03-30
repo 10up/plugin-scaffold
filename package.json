@@ -2,7 +2,6 @@
   "name": "tenup-scaffold",
   "version": "1.0.0",
   "description": "10up Scaffold",
-  "main": "index.js",
   "author": {
     "name": "10up",
     "email": "info@10up.com",
