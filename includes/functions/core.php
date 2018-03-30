@@ -207,5 +207,14 @@ function styles() {
  * @return string
  */
 function mce_css( $stylesheets ) {
-	return $stylesheets . ',' . TENUP_SCAFFOLD_URL . "assets/css/admin/editor-style.css";
+
+	function style_url() {
+
+		return TENUP_SCAFFOLD_URL . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?  
+			"assets/css/admin/editor-style.css" :
+			"dist/css/editor-style.min.css" );
+			
+	}
+
+	return $stylesheets . ',' . style_url();
 }
