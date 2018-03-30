@@ -89,9 +89,12 @@ function deactivate() {
  */
 function scripts() {
 
+	// Use minified libraries if SCRIPT_DEBUG is turned off
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
 	wp_enqueue_script(
 		'tenup_scaffold_shared',
-		TENUP_SCAFFOLD_URL . "assets/js/shared/shared.js",
+		TENUP_SCAFFOLD_URL . "assets/js/shared/shared${suffix}.js",
 		[],
 		TENUP_SCAFFOLD_VERSION,
 		true
@@ -100,7 +103,7 @@ function scripts() {
 	if( is_admin() ) {
 		wp_enqueue_script(
 			'tenup_scaffold_admin',
-			TENUP_SCAFFOLD_URL . "assets/js/admin/admin.js",
+			TENUP_SCAFFOLD_URL . "assets/js/admin/admin${suffix}.js",
 			[],
 			TENUP_SCAFFOLD_VERSION,
 			true
@@ -109,7 +112,7 @@ function scripts() {
 	else {
 		wp_enqueue_script(
 			'tenup_scaffold_frontend',
-			TENUP_SCAFFOLD_URL . "assets/js/frontend/frontend.js",
+			TENUP_SCAFFOLD_URL . "assets/js/frontend/frontend${suffix}.js",
 			[],
 			TENUP_SCAFFOLD_VERSION,
 			true
