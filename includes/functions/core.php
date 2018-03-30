@@ -16,6 +16,11 @@ function setup() {
 
 	add_action( 'init', $n( 'i18n' ) );
 	add_action( 'init', $n( 'init' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
+	
+	// Editor styles. add_editor_style() doesn't work outside of a theme.
+	add_filter( 'mce_css', $n( 'mce_css' ) );
 
 	do_action( 'tenup_scaffold_loaded' );
 }
@@ -85,12 +90,31 @@ function deactivate() {
 function scripts() {
 
 	wp_enqueue_script(
-		'frontend',
-		TENUP_SCAFFOLD_TEMPLATE_URL . "/dist/js/frontend.min.js",
+		'tenup_scaffold_shared',
+		TENUP_SCAFFOLD_URL . "assets/js/shared/shared.js",
 		[],
 		TENUP_SCAFFOLD_VERSION,
 		true
 	);
+
+	if( is_admin() ) {
+		wp_enqueue_script(
+			'tenup_scaffold_admin',
+			TENUP_SCAFFOLD_URL . "assets/js/admin/admin.js",
+			[],
+			TENUP_SCAFFOLD_VERSION,
+			true
+		);
+	}
+	else {
+		wp_enqueue_script(
+			'tenup_scaffold_frontend',
+			TENUP_SCAFFOLD_URL . "assets/js/frontend/frontend.js",
+			[],
+			TENUP_SCAFFOLD_VERSION,
+			true
+		);
+	}
 
 }
 
@@ -106,9 +130,40 @@ function scripts() {
 function styles() {
 
 	wp_enqueue_style(
-		'styles',
-		TENUP_SCAFFOLD_TEMPLATE_URL . "/dist/css/style.min.css",
+		'tenup_scaffold_shared',
+		TENUP_SCAFFOLD_URL . "assets/css/shared/shared-style.css",
 		[],
 		TENUP_SCAFFOLD_VERSION
 	);
+
+	if( is_admin() ) {
+		wp_enqueue_script(
+			'tenup_scaffold_admin',
+			TENUP_SCAFFOLD_URL . "assets/css/admin/admin-style.css",
+			[],
+			TENUP_SCAFFOLD_VERSION,
+			true
+		);
+	}
+	else {
+		wp_enqueue_script(
+			'tenup_scaffold_frontend',
+			TENUP_SCAFFOLD_URL . "assets/js/frontend/style.css",
+			[],
+			TENUP_SCAFFOLD_VERSION,
+			true
+		);
+	}
+	
+}
+
+/**
+ * Enqueue editor styles
+ * 
+ * @since 0.1.0
+ *
+ * @return string
+ */
+function mce_css( $stylesheets ) {
+	return $stylesheets . ',' . TENUP_SCAFFOLD_URL . "assets/css/admin/editor-style.css";
 }
