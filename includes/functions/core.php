@@ -20,7 +20,7 @@ function setup() {
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_scripts' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_styles' ) );
-	
+
 	// Editor styles. add_editor_style() doesn't work outside of a theme.
 	add_filter( 'mce_css', $n( 'mce_css' ) );
 
@@ -82,11 +82,11 @@ function deactivate() {
 
 /**
  * Generate an URL to a script, taking into account whether SCRIPT_DEBUG is enabled.
- * 
+ *
  * @since 0.1.0
  * @param string $script Script file name (no .js extension)
  * @param string $context Context for the script ('admin', 'frontend', or 'shared')
- * 
+ *
  * @return string|WP_Error URL
  */
 function script_url( $script, $context ) {
@@ -99,16 +99,16 @@ function script_url( $script, $context ) {
 	return ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
 		TENUP_SCAFFOLD_URL . "assets/js/${context}/{$script}.js" :
 		TENUP_SCAFFOLD_URL . "dist/js/${context}.min.js" ;
-	
+
 }
 
 /**
  * Generate an URL to a stylesheet, taking into account whether SCRIPT_DEBUG is enabled.
- * 
+ *
  * @since 0.1.0
  * @param string $stylesheet Stylesheet file name (no .css extension)
  * @param string $context Context for the script ('admin', 'frontend', or 'shared')
- * 
+ *
  * @return string URL
  */
 function style_url( $stylesheet, $context ) {
@@ -121,7 +121,7 @@ function style_url( $stylesheet, $context ) {
 	return ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
 		TENUP_SCAFFOLD_URL . "assets/css/${context}/{$stylesheet}.css" :
 		TENUP_SCAFFOLD_URL . "dist/css/${stylesheet}.min.css" ;
-	
+
 }
 
 /**
@@ -218,7 +218,7 @@ function styles() {
 			true
 		);
 	}
-	
+
 }
 
 /**
@@ -246,12 +246,12 @@ function admin_styles() {
 		TENUP_SCAFFOLD_VERSION,
 		true
 	);
-	
+
 }
 
 /**
  * Enqueue editor styles
- * 
+ *
  * @since 0.1.0
  *
  * @return string
@@ -260,8 +260,8 @@ function mce_css( $stylesheets ) {
 
 	function style_url() {
 
-		return TENUP_SCAFFOLD_URL . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?  
-			"assets/css/admin/editor-style.css" :
+		return TENUP_SCAFFOLD_URL . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
+			"assets/css/frontend/editor-style.css" :
 			"dist/css/editor-style.min.css" );
 
 	}
