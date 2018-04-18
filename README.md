@@ -15,7 +15,7 @@ At 10up, we strive to provide digital products that yield a top-notch user exper
 ## Getting Started
 
 ### Quick Start
-Install 10up's command line tool for scaffolding new projects. You can download it from the [Project Scaffold repository](https://github.com/10up/project-scaffold). Setting up a new theme is as easy as running `create-10up theme theme-name-here` in the terminal!
+Install 10up's command line tool for scaffolding new projects. You can download it from the [Project Scaffold repository](https://github.com/10up/project-scaffold). Setting up a new plugin is as easy as running `create-10up plugin plugin-name-here` in the terminal!
 
 ### Direct Install
 - Clone the repository
@@ -42,7 +42,7 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 
 ## Contributing
 
-We don't know everything! We welcome pull requests and spirited, but respectful, debates. Please contribute via [pull requests on GitHub](https://github.com/10up/theme-scaffold/compare).
+We don't know everything! We welcome pull requests and spirited, but respectful, debates. Please contribute via [pull requests on GitHub](https://github.com/10up/plugin-scaffold/compare).
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b feature/my-new-feature`
