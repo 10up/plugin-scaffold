@@ -1,5 +1,5 @@
 <?php
-namespace TenUp\TenUpScaffold\Core;
+namespace TenUpScaffold\Core;
 
 /**
  * Default setup routine

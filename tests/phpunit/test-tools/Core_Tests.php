@@ -1,5 +1,5 @@
 <?php
-namespace TenUp\TenUpScaffold\Core;
+namespace TenUpScaffold\Core;
 
 /**
  * This is a very basic test case to get things started. You should probably rename this and make
@@ -13,7 +13,7 @@ namespace TenUp\TenUpScaffold\Core;
  *   - https://github.com/10up/wp_mock
  */
 
-use TenUp\TenUpScaffold as Base;
+use TenUpScaffold as Base;
 
 class Core_Tests extends Base\TestCase {
 
@@ -21,13 +21,13 @@ class Core_Tests extends Base\TestCase {
 		'functions/core.php'
 	];
 
-	/** 
+	/**
 	 * Test load method.
 	 */
 	public function test_setup() {
 		// Setup
-		\WP_Mock::expectActionAdded( 'init', 'TenUp\TenUpScaffold\Core\i18n' );
-		\WP_Mock::expectActionAdded( 'init', 'TenUp\TenUpScaffold\Core\init' );
+		\WP_Mock::expectActionAdded( 'init', 'TenUpScaffold\Core\i18n' );
+		\WP_Mock::expectActionAdded( 'init', 'TenUpScaffold\Core\init' );
 		\WP_Mock::expectAction( 'tenup_scaffold_loaded' );
 
 		// Act
@@ -69,7 +69,7 @@ class Core_Tests extends Base\TestCase {
 		$this->assertConditionsMet();
 	}
 
-	/** 
+	/**
 	 * Test initialization method.
 	 */
 	public function test_init() {
@@ -83,7 +83,7 @@ class Core_Tests extends Base\TestCase {
 		$this->assertConditionsMet();
 	}
 
-	/** 
+	/**
 	 * Test activation routine.
 	 */
 	public function test_activate() {
@@ -99,7 +99,7 @@ class Core_Tests extends Base\TestCase {
 		$this->assertConditionsMet();
 	}
 
-	/** 
+	/**
 	 * Test deactivation routine.
 	 */
 	public function test_deactivate() {
