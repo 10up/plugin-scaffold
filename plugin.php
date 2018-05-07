@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: TenUpScaffold
- * Plugin URI:  
- * Description: 
+ * Plugin URI:
+ * Description:
  * Version:     0.1.0
  * Author:      10up
  * Author URI:  https://10up.com
@@ -21,8 +21,8 @@ require_once TENUP_SCAFFOLD_INC . 'functions/core.php';
 
 
 // Activation/Deactivation
-register_activation_hook( __FILE__, '\TenUp\TenUpScaffold\Core\activate' );
-register_deactivation_hook( __FILE__, '\TenUp\TenUpScaffold\Core\deactivate' );
+register_activation_hook( __FILE__, '\TenUpScaffold\Core\activate' );
+register_deactivation_hook( __FILE__, '\TenUpScaffold\Core\deactivate' );
 
 // Bootstrap
-TenUp\TenUpScaffold\Core\setup();
+TenUpScaffold\Core\setup();
