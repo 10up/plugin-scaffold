@@ -4,9 +4,6 @@ namespace TenUpScaffold\Core;
 /**
  * Default setup routine
  *
- * @uses add_action()
- * @uses do_action()
- *
  * @return void
  */
 function setup() {
@@ -30,12 +27,6 @@ function setup() {
 /**
  * Registers the default textdomain.
  *
- * @uses apply_filters()
- * @uses get_locale()
- * @uses load_textdomain()
- * @uses load_plugin_textdomain()
- * @uses plugin_basename()
- *
  * @return void
  */
 function i18n() {
@@ -47,8 +38,6 @@ function i18n() {
 /**
  * Initializes the plugin and fires an action other plugins can hook into.
  *
- * @uses do_action()
- *
  * @return void
  */
 function init() {
@@ -57,9 +46,6 @@ function init() {
 
 /**
  * Activate the plugin
- *
- * @uses init()
- * @uses flush_rewrite_rules()
  *
  * @return void
  */
@@ -83,7 +69,6 @@ function deactivate() {
 /**
  * Generate an URL to a script, taking into account whether SCRIPT_DEBUG is enabled.
  *
- * @since 0.1.0
  * @param string $script Script file name (no .js extension)
  * @param string $context Context for the script ('admin', 'frontend', or 'shared')
  *
@@ -105,7 +90,6 @@ function script_url( $script, $context ) {
 /**
  * Generate an URL to a stylesheet, taking into account whether SCRIPT_DEBUG is enabled.
  *
- * @since 0.1.0
  * @param string $stylesheet Stylesheet file name (no .css extension)
  * @param string $context Context for the script ('admin', 'frontend', or 'shared')
  *
@@ -126,10 +110,6 @@ function style_url( $stylesheet, $context ) {
 
 /**
  * Enqueue scripts for front-end.
- *
- * @uses wp_enqueue_script() to load front end scripts.
- *
- * @since 0.1.0
  *
  * @return void
  */
@@ -156,10 +136,6 @@ function scripts() {
 /**
  * Enqueue scripts for admin.
  *
- * @uses wp_enqueue_script() to load admin scripts.
- *
- * @since 0.1.0
- *
  * @return void
  */
 function admin_scripts() {
@@ -184,10 +160,6 @@ function admin_scripts() {
 
 /**
  * Enqueue styles for front-end.
- *
- * @uses wp_enqueue_style() to load front end styles.
- *
- * @since 0.1.0
  *
  * @return void
  */
@@ -224,10 +196,6 @@ function styles() {
 /**
  * Enqueue styles for admin.
  *
- * @uses wp_enqueue_style() to load admin styles.
- *
- * @since 0.1.0
- *
  * @return void
  */
 function admin_styles() {
@@ -251,8 +219,6 @@ function admin_styles() {
 
 /**
  * Enqueue editor styles
- *
- * @since 0.1.0
  *
  * @return string
  */
