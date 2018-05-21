@@ -42,22 +42,22 @@ class Core_Tests extends Base\TestCase {
 	 */
 	public function test_i18n() {
 		// Setup
-		\WP_Mock::wpFunction( 'get_locale', array(
+		\WP_Mock::userFunction( 'get_locale', array(
 			'times' => 1,
 			'args' => array(),
 			'return' => 'en_US',
 		) );
 		\WP_Mock::onFilter( 'plugin_locale' )->with( 'en_US', 'tenup-scaffold' )->reply( 'en_US' );
-		\WP_Mock::wpFunction( 'load_textdomain', array(
+		\WP_Mock::userFunction( 'load_textdomain', array(
 			'times' => 1,
 			'args' => array( 'tenup-scaffold', 'lang_dir/tenup-scaffold/tenup-scaffold-en_US.mo' ),
 		) );
-		\WP_Mock::wpFunction( 'plugin_basename', array(
+		\WP_Mock::userFunction( 'plugin_basename', array(
 			'times' => 1,
 			'args' => array( 'path' ),
 			'return' => 'path',
 		) );
-		\WP_Mock::wpFunction( 'load_plugin_textdomain', array(
+		\WP_Mock::userFunction( 'load_plugin_textdomain', array(
 			'times' => 1,
 			'args' => array( 'tenup-scaffold', false, 'path/languages/' ),
 		) );
@@ -88,7 +88,7 @@ class Core_Tests extends Base\TestCase {
 	 */
 	public function test_activate() {
 		// Setup
-		\WP_Mock::wpFunction( 'flush_rewrite_rules', array(
+		\WP_Mock::userFunction( 'flush_rewrite_rules', array(
 			'times' => 1
 		) );
 
@@ -109,5 +109,6 @@ class Core_Tests extends Base\TestCase {
 		deactivate();
 
 		// Verify
+		$this->assertTrue( true ); // Replace with actual assertion
 	}
 }
