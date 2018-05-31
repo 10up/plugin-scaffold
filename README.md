@@ -55,6 +55,7 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Babel eslint](https://www.npmjs.com/package/babel-eslint)
 - [Babel loader](https://www.npmjs.com/package/babel-loader)
 - [Babel preset env](https://www.npmjs.com/package/babel-preset-env)
+- [Browserslist](https://www.npmjs.com/package/browserslist)
 - [Can I Use DB](https://www.npmjs.com/package/caniuse-db)
 - [Del](https://www.npmjs.com/package/del)
 - [Eslint](https://www.npmjs.com/package/eslint)
