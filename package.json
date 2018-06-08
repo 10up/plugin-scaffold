@@ -1,7 +1,7 @@
 {
-  "name": "tenup-scaffold",
+  "name": "plugin-scaffold",
   "version": "1.0.0",
-  "description": "10up Scaffold",
+  "description": "10up Plugin Scaffold",
   "author": {
     "name": "10up",
     "email": "info@10up.com",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://project-git-repo.tld"
+    "url": "https://github.com/10up/project-scaffold"
   },
   "browserslist": [
     "> 1%",
