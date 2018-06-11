@@ -48,5 +48,9 @@
     "webpack": "^4.10.2",
     "webpack-cli": "^2.1.4",
     "webpack-stream": "^3.2.0"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": "~8.11"
   }
 }
