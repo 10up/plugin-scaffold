@@ -11,6 +11,7 @@ gulp.task( 'css', ( cb ) => {
 		'./assets/css/shared/shared-style.css'
 	];
 	const fileDest = './dist';
+
 	const cssOpts = {
 		stage: 0
 	};

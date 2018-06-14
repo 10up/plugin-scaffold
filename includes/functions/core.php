@@ -218,19 +218,17 @@ function admin_styles() {
 }
 
 /**
- * Enqueue editor styles
+ * Enqueue editor styles. Filters the comma-delimited list of stylesheets to load in TinyMCE.
  *
+ * @param string $stylesheets Comma-delimited list of stylesheets.
  * @return string
  */
 function mce_css( $stylesheets ) {
-
-	function style_url() {
-
-		return TENUP_SCAFFOLD_URL . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
-			"assets/css/frontend/editor-style.css" :
-			"dist/css/editor-style.min.css" );
-
+	if ( ! empty( $stylesheets ) ) {
+		$stylesheets .= ',';
 	}
 
-	return $stylesheets . ',' . style_url();
+	return $stylesheets . TENUP_SCAFFOLD_URL . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
+			'assets/css/frontend/editor-style.css' :
+			'dist/css/editor-style.min.css' );
 }

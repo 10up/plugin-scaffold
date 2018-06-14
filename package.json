@@ -1,7 +1,7 @@
 {
-  "name": "tenup-scaffold",
+  "name": "plugin-scaffold",
   "version": "1.0.0",
-  "description": "10up Scaffold",
+  "description": "10up Plugin Scaffold",
   "author": {
     "name": "10up",
     "email": "info@10up.com",
@@ -17,31 +17,36 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://project-git-repo.tld"
+    "url": "https://github.com/10up/plugin-scaffold"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.3",
-    "babel-preset-env": "^1.6.1",
-    "caniuse-db": "^1.0.30000798",
+    "babel-preset-env": "^1.7.0",
+    "browserslist": "^3.2.8",
+    "caniuse-db": "^1.0.30000855",
     "del": "^3.0.0",
-    "eslint": "^4.18.2",
+    "eslint": "^4.19.1",
     "eslint-loader": "^2.0.0",
     "gulp": "^3.9.1",
-    "gulp-cssnano": "^2.1.2",
+    "gulp-cssnano": "^2.1.3",
     "gulp-filter": "^5.1.0",
     "gulp-livereload": "^3.8.1",
     "gulp-postcss": "^7.0.1",
-    "gulp-rename": "^1.2.2",
+    "gulp-rename": "^1.3.0",
     "gulp-sourcemaps": "^2.6.4",
     "postcss-import": "^10.0.0",
     "postcss-preset-env": "^5.1.0",
     "pump": "^1.0.3",
     "require-dir": "^0.3.2",
     "run-sequence": "^1.2.2",
-    "webpack": "^4.0.1",
-    "webpack-cli": "^2.0.10",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^2.1.5",
     "webpack-stream": "^3.2.0"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": "~8.11"
   }
 }
