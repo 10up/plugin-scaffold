@@ -20,6 +20,7 @@
     "url": "https://github.com/10up/plugin-scaffold"
   },
   "devDependencies": {
+    "@10up/eslint-config": "^1.0.4",
     "babel-core": "^6.26.3",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.3",
