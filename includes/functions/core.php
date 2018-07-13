@@ -83,7 +83,7 @@ function deactivate() {
 function script_url( $script, $context ) {
 
 	if ( ! in_array( $context, [ 'admin', 'frontend', 'shared' ], true ) ) {
-		error_log( 'Invalid $context specfied in TenUpScaffold script loader.' );
+		error_log( 'Invalid $context specified in TenUpScaffold script loader.' );
 		return '';
 	}
 
@@ -104,7 +104,7 @@ function script_url( $script, $context ) {
 function style_url( $stylesheet, $context ) {
 
 	if ( ! in_array( $context, [ 'admin', 'frontend', 'shared' ], true ) ) {
-		error_log( 'Invalid $context specfied in TenUpScaffold stylesheet loader.' );
+		error_log( 'Invalid $context specified in TenUpScaffold stylesheet loader.' );
 		return '';
 	}
 
