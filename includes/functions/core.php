@@ -72,6 +72,16 @@ function deactivate() {
 
 }
 
+
+/**
+ * The list of knows contexts for enqueuing scripts/styles.
+ *
+ * @return array
+ */
+function get_enqueue_contexts() {
+	return [ 'admin', 'frontend', 'shared' ];
+}
+
 /**
  * Generate an URL to a script, taking into account whether SCRIPT_DEBUG is enabled.
  *
@@ -82,7 +92,7 @@ function deactivate() {
  */
 function script_url( $script, $context ) {
 
-	if ( ! in_array( $context, [ 'admin', 'frontend', 'shared' ], true ) ) {
+	if ( ! in_array( $context, get_enqueue_contexts(), true ) ) {
 		error_log( 'Invalid $context specified in TenUpScaffold script loader.' );
 		return '';
 	}
@@ -103,7 +113,7 @@ function script_url( $script, $context ) {
  */
 function style_url( $stylesheet, $context ) {
 
-	if ( ! in_array( $context, [ 'admin', 'frontend', 'shared' ], true ) ) {
+	if ( ! in_array( $context, get_enqueue_contexts(), true ) ) {
 		error_log( 'Invalid $context specified in TenUpScaffold stylesheet loader.' );
 		return '';
 	}
