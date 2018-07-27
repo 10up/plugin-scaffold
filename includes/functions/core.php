@@ -93,8 +93,7 @@ function get_enqueue_contexts() {
 function script_url( $script, $context ) {
 
 	if ( ! in_array( $context, get_enqueue_contexts(), true ) ) {
-		error_log( 'Invalid $context specified in TenUpScaffold script loader.' );
-		return '';
+        return new WP_Error( 'invalid_enqueue_context', 'Invalid $context specified in TenUpScaffold script loader.' );
 	}
 
 	return ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
