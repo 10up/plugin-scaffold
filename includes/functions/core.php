@@ -2,7 +2,7 @@
 /**
  * Core plugin functionality.
  *
- * @package ThemeScaffold
+ * @package PluginScaffold
  */
 
 namespace TenUpScaffold\Core;
