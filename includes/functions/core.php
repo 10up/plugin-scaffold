@@ -188,7 +188,7 @@ function styles() {
 	);
 
 	if ( is_admin() ) {
-		wp_enqueue_script(
+		wp_enqueue_style(
 			'tenup_scaffold_admin',
 			style_url( 'admin-style', 'admin' ),
 			[],
@@ -196,7 +196,7 @@ function styles() {
 			true
 		);
 	} else {
-		wp_enqueue_script(
+		wp_enqueue_style(
 			'tenup_scaffold_frontend',
 			style_url( 'style', 'frontend' ),
 			[],
@@ -221,7 +221,7 @@ function admin_styles() {
 		TENUP_SCAFFOLD_VERSION
 	);
 
-	wp_enqueue_script(
+	wp_enqueue_style(
 		'tenup_scaffold_admin',
 		style_url( 'admin-style', 'admin' ),
 		[],
