@@ -192,16 +192,14 @@ function styles() {
 			'tenup_scaffold_admin',
 			style_url( 'admin-style', 'admin' ),
 			[],
-			TENUP_SCAFFOLD_VERSION,
-			true
+			TENUP_SCAFFOLD_VERSION
 		);
 	} else {
 		wp_enqueue_style(
 			'tenup_scaffold_frontend',
 			style_url( 'style', 'frontend' ),
 			[],
-			TENUP_SCAFFOLD_VERSION,
-			true
+			TENUP_SCAFFOLD_VERSION
 		);
 	}
 
@@ -225,8 +223,7 @@ function admin_styles() {
 		'tenup_scaffold_admin',
 		style_url( 'admin-style', 'admin' ),
 		[],
-		TENUP_SCAFFOLD_VERSION,
-		true
+		TENUP_SCAFFOLD_VERSION
 	);
 
 }
