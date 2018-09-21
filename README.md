@@ -30,6 +30,20 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 - `cd` into the plugin folder
 - run `npm run start` to build the front-end assets
 
+### Copying to an existing plugin
+If copying files manually to an existing plugin directory, make sure to include the following files which may be hidden:
+
+```
+.babelrc
+.browserslistrc
+.editorconfig
+.eslintignore
+.eslintrc
+.gitignore
+```
+
+The NPM commands will fail without these files present.
+
 ## NPM Commands
 
 `npm run start` (install dependencies and run initial gulp)
