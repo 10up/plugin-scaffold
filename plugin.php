@@ -12,19 +12,23 @@
  * @package PluginScaffold
  */
 
-// Useful global constants
+// Useful global constants.
 define( 'TENUP_SCAFFOLD_VERSION', '0.1.0' );
 define( 'TENUP_SCAFFOLD_URL', plugin_dir_url( __FILE__ ) );
 define( 'TENUP_SCAFFOLD_PATH', dirname( __FILE__ ) . '/' );
 define( 'TENUP_SCAFFOLD_INC', TENUP_SCAFFOLD_PATH . 'includes/' );
 
-// Include files
+// Include files.
 require_once TENUP_SCAFFOLD_INC . 'functions/core.php';
 
-
-// Activation/Deactivation
+// Activation/Deactivation.
 register_activation_hook( __FILE__, '\TenUpScaffold\Core\activate' );
 register_deactivation_hook( __FILE__, '\TenUpScaffold\Core\deactivate' );
 
-// Bootstrap
+// Bootstrap.
 TenUpScaffold\Core\setup();
+
+// Require Composer autoloader if it exists.
+if ( file_exists( TENUP_SCAFFOLD_PATH . '/vendor/autoload.php' ) ) {
+	require_once TENUP_SCAFFOLD_PATH . 'vendor/autoload.php';
+}
