@@ -99,7 +99,7 @@ function script_url( $script, $context ) {
 
 	return ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
 		TENUP_SCAFFOLD_URL . "assets/js/${context}/{$script}.js" :
-		TENUP_SCAFFOLD_URL . "dist/js/${context}.min.js";
+		TENUP_SCAFFOLD_URL . "dist/js/${script}.min.js";
 
 }
 
