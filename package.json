@@ -67,5 +67,8 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.0"
+  },
+  "browserSync": {
+    "proxyUrl": "http://tenup-scaffold.test"
   }
 }
