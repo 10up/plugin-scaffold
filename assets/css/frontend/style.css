@@ -10,8 +10,7 @@
 /* @import url("global/index"); */
 
 /* Base - base styles such as fonts, typography, and wordpress overrides */
-
-/* @import url("base/index"); */
+@import url("base/index.css");
 
 /* Layout - styles specific to layout */
 
