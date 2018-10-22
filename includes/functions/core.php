@@ -6,6 +6,7 @@
  */
 
 namespace TenUpScaffold\Core;
+
 use \WP_Error as WP_Error;
 
 /**
