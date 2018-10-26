@@ -53,7 +53,7 @@ The NPM commands will fail without these files present.
 
 `npm run build` (build all front-end files)
 
-`npm run deploy` (build all front-end files for deploy)
+`npm run build-release` (build all front-end files for release)
 
 ## Composer Commands
 
