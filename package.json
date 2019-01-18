@@ -11,7 +11,7 @@
   "scripts": {
     "test": "phpunit",
     "start": "npm install && composer install && gulp",
-    "watch": "gulp watch",
+    "watch": "gulp watch --silent",
     "build": "gulp",
     "build-release": "npm install && composer install --no-dev -o && gulp",
     "lint-release": "npm install && composer install && npm run lint",
