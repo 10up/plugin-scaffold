@@ -40,8 +40,8 @@
     "url": "https://github.com/10up/plugin-scaffold"
   },
   "devDependencies": {
-    "@10up/eslint-config": "^1.0.4",
-    "@10up/stylelint-config": "^1.0.1",
+    "@10up/eslint-config": "^1.0.9",
+    "@10up/stylelint-config": "^1.0.3",
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/register": "^7.0.0",
