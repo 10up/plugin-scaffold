@@ -9,7 +9,7 @@
  * Text Domain: tenup-scaffold
  * Domain Path: /languages
  *
- * @package PluginScaffold
+ * @package TenUpScaffold
  */
 
 // Useful global constants.
