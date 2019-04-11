@@ -100,9 +100,7 @@ function script_url( $script, $context ) {
 		return new WP_Error( 'invalid_enqueue_context', 'Invalid $context specified in TenUpScaffold script loader.' );
 	}
 
-	return ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
-		TENUP_SCAFFOLD_URL . "assets/js/${context}/{$script}.js" :
-		TENUP_SCAFFOLD_URL . "dist/js/${script}.min.js";
+	return "dist/js/${script}.js";
 
 }
 
@@ -120,9 +118,7 @@ function style_url( $stylesheet, $context ) {
 		return new WP_Error( 'invalid_enqueue_context', 'Invalid $context specified in TenUpScaffold stylesheet loader.' );
 	}
 
-	return ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
-		TENUP_SCAFFOLD_URL . "assets/css/${context}/{$stylesheet}.css" :
-		TENUP_SCAFFOLD_URL . "dist/css/${stylesheet}.min.css";
+	return TENUP_SCAFFOLD_URL . "dist/css/${stylesheet}.css";
 
 }
 
