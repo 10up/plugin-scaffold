@@ -8,7 +8,7 @@ use WP_Mock;
 use WP_Mock\Tools\TestCase as BaseTestCase;
 
 class TestCase extends BaseTestCase {
-	public function run( \PHPUnit\Framework\TestResult $result = null ) :TestResult {
+	public function run( TestResult $result = null ) :TestResult {
 		$this->setPreserveGlobalState( false );
 		return parent::run( $result );
 	}
