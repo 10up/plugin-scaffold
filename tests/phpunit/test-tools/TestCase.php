@@ -2,20 +2,20 @@
 
 namespace TenUpScaffold;
 
-use PHPUnit_Framework_TestResult;
+use PHPUnit\Framework\TestResult;
 use Text_Template;
 use WP_Mock;
 use WP_Mock\Tools\TestCase as BaseTestCase;
 
 class TestCase extends BaseTestCase {
-	public function run( \PHPUnit\Framework\TestResult $result = null ) {
+	public function run( \PHPUnit\Framework\TestResult $result = null ) :TestResult {
 		$this->setPreserveGlobalState( false );
 		return parent::run( $result );
 	}
 
 	protected $testFiles = array();
 
-	public function setUp() {
+	public function setUp() :void {
 		if ( ! empty( $this->testFiles ) ) {
 			foreach ( $this->testFiles as $file ) {
 				if ( file_exists( PROJECT . $file ) ) {
@@ -31,7 +31,7 @@ class TestCase extends BaseTestCase {
 		$actions_not_added = $expected_actions = 0;
 		try {
 			WP_Mock::assertActionsCalled();
-		} catch ( \Exception $e ) {
+		} catch ( Exception $e ) {
 			$actions_not_added = 1;
 			$expected_actions  = $e->getMessage();
 		}
@@ -66,7 +66,7 @@ class TestCase extends BaseTestCase {
 	 *
 	 * @param \Text_Template $template
 	 */
-	public function prepareTemplate( \Text_Template $template ) {
+	public function prepareTemplate( Text_Template $template ) {
 		$template->setVar( [
 			'globals' => '$GLOBALS[\'__PHPUNIT_BOOTSTRAP\'] = \'' . $GLOBALS['__PHPUNIT_BOOTSTRAP'] . '\';',
 		] );
