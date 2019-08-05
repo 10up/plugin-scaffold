@@ -16,8 +16,8 @@
     }
   },
   "require-dev": {
-    "phpunit/phpunit": "^6.5",
-    "10up/wp_mock": "dev-dev",
+    "phpunit/phpunit": "^8.2",
+    "10up/wp_mock": "dev-master",
     "10up/phpcs-composer": "dev-master"
   },
   "scripts": {
