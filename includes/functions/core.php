@@ -100,7 +100,7 @@ function script_url( $script, $context ) {
 		return new WP_Error( 'invalid_enqueue_context', 'Invalid $context specified in TenUpScaffold script loader.' );
 	}
 
-	return "dist/js/${script}.js";
+	return TENUP_SCAFFOLD_URL . "dist/js/${script}.js";
 
 }
 
