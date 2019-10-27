@@ -1,5 +1,3 @@
-/* global module */
-
 // Webpack settings exports.
 module.exports = {
 	entries: {
@@ -50,7 +48,7 @@ module.exports = {
 	BrowserSyncConfig: {
 		host: 'localhost',
 		port: 3000,
-		proxy: 'http://tenup-scaffold.test',
+		proxy: 'http://wp.test/',
 		open: false,
 		files: [
 			'**/*.php',

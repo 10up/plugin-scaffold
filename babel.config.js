@@ -1,10 +1,15 @@
 /**
  * Babel Config.
  *
- * @type {{presets: [[]|String|Object]}}
+ * @param {Object} api
+ * @returns {{presets: {Object}}}
  */
-module.exports = {
-	'presets': [
+module.exports = api => {
+	/**
+	 * @link https://babeljs.io/docs/en/config-files#apicache
+	 */
+	api.cache.using( () => process.env.NODE_ENV );
+	const presets = [
 		[
 			/**
 			 * @link https://babeljs.io/docs/en/babel-preset-env#corejs
@@ -18,5 +23,8 @@ module.exports = {
 				},
 			}
 		],
-	],
+	];
+	return {
+		presets
+	};
 };
