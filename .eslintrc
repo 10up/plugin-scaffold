@@ -1,8 +1,6 @@
 {
 	"extends": "@10up/eslint-config",
 	"globals": {
-		"module": true,
-		"require": true,
-		"process": true
+		"module": true
 	}
 }
