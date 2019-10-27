@@ -5,10 +5,18 @@
  * @returns {{presets: {Object}}}
  */
 module.exports = api => {
+
 	/**
 	 * @link https://babeljs.io/docs/en/config-files#apicache
 	 */
 	api.cache.using( () => 'development' === process.env.NODE_ENV );
+
+	/**
+	 * Presets
+	 *
+	 * @link https://babeljs.io/docs/en/presets
+	 * @type {Array}
+	 */
 	const presets = [
 		[
 			/**
@@ -24,7 +32,17 @@ module.exports = api => {
 			}
 		],
 	];
+
+	/**
+	 * Plugins
+	 *
+	 * @link https://babeljs.io/docs/en/plugins
+	 * @type {Array}
+	 */
+	const plugins = [];
+
 	return {
-		presets
+		presets,
+		plugins
 	};
 };
