@@ -1,10 +1,22 @@
 /**
- * Babel Config, .babelrc equivalent.
+ * Babel Config.
  *
- * @type {{presets: [string]}}
+ * @type {{presets: [[]|String|Object]}}
  */
 module.exports = {
-	presets: [
-		'@babel/preset-env'
-	]
+	'presets': [
+		[
+			/**
+			 * @link https://babeljs.io/docs/en/babel-preset-env#corejs
+			 */
+			'@babel/preset-env',
+			{
+				useBuiltIns: 'usage',
+				corejs: {
+					version: 3,
+					proposals: true
+				},
+			}
+		],
+	],
 };
