@@ -8,7 +8,7 @@ module.exports = api => {
 	/**
 	 * @link https://babeljs.io/docs/en/config-files#apicache
 	 */
-	api.cache.using( () => process.env.NODE_ENV );
+	api.cache.using( () => 'development' === process.env.NODE_ENV );
 	const presets = [
 		[
 			/**
