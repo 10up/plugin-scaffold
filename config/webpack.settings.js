@@ -48,7 +48,7 @@ module.exports = {
 	BrowserSyncConfig: {
 		host: 'localhost',
 		port: 3000,
-		proxy: 'http://tenup-scaffold.test/',
+		proxy: 'http://tenup-scaffold.test',
 		open: false,
 		files: [
 			'**/*.php',
