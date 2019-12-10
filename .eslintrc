@@ -1,7 +1,7 @@
 {
-	"extends": "@10up/eslint-config",
+  "extends": "@10up/eslint-config",
   "globals": {
-		"wp": true,
-		"lodash": true
+    "wp": true,
+    "lodash": true
   }
 }
