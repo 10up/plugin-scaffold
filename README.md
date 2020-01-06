@@ -107,6 +107,7 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Eslint](https://www.npmjs.com/package/eslint)
 - [Eslint loader](https://www.npmjs.com/package/eslint-loader)
 - [Husky@next](https://www.npmjs.com/package/husky)
+- [Imagemin plugin for Webpack](https://github.com/Klathmon/imagemin-webpack-plugin)
 - [Lint Staged](https://www.npmjs.com/package/lint-staged)
 - [Mini CSS extract plugin](https://www.npmjs.com/package/mini-css-extract-plugin)
 - [PostCSS Import](https://www.npmjs.com/package/postcss-import)
