@@ -105,6 +105,54 @@ function script_url( $script, $context ) {
 }
 
 /**
+ * Retrieve the list of script dependencies for the script being loaded.
+ *
+ * @param string $script Script file name (no .js extension)
+ *
+ * @return array The array containing the dependencies and version
+ */
+function script_dependencies( $script ) {
+	// The file hasn't been created
+	if ( ! file_exists( TENUP_SCAFFOLD_PATH . '/dist/assets.php' ) ) {
+		return [];
+	}
+
+	// include the assets.
+	$assets = include TENUP_SCAFFOLD_PATH . '/dist/assets.php';
+
+	// Does this script have depenedencies
+	if ( ! isset( $assets[ "js/{$script}.js" ] ) ) {
+		return [];
+	}
+
+	return $assets[ "js/{$script}.js" ]['dependencies'];
+}
+
+/**
+ * Retrieve the version for the script
+ *
+ * @param string $script Script file name (no .js extension)
+ *
+ * @return string Version
+ */
+function script_version( $script ) {
+	// The file hasn't been created
+	if ( ! file_exists( TENUP_SCAFFOLD_PATH . '/dist/assets.php' ) ) {
+		return TENUP_SCAFFOLD_VERSION;
+	}
+
+	// include the assets.
+	$assets = include TENUP_SCAFFOLD_PATH . '/dist/assets.php';
+
+	// Does this script have depenedencies
+	if ( ! isset( $assets[ "js/{$script}.js" ] ) ) {
+		return TENUP_SCAFFOLD_VERSION;
+	}
+
+	return $assets[ "js/{$script}.js" ]['version'];
+}
+
+/**
  * Generate an URL to a stylesheet, taking into account whether SCRIPT_DEBUG is enabled.
  *
  * @param string $stylesheet Stylesheet file name (no .css extension)
@@ -132,16 +180,16 @@ function scripts() {
 	wp_enqueue_script(
 		'tenup_scaffold_shared',
 		script_url( 'shared', 'shared' ),
-		[],
-		TENUP_SCAFFOLD_VERSION,
+		array_merge( script_dependencies( 'shared' ), [] ), // Add any manual enqeues to the second array.
+		script_version( 'shared' ),
 		true
 	);
 
 	wp_enqueue_script(
 		'tenup_scaffold_frontend',
 		script_url( 'frontend', 'frontend' ),
-		[],
-		TENUP_SCAFFOLD_VERSION,
+		array_merge( script_dependencies( 'frontend' ), [] ), // Add any manual enqeues to the second array.
+		script_version( 'frontend' ),
 		true
 	);
 
@@ -157,16 +205,16 @@ function admin_scripts() {
 	wp_enqueue_script(
 		'tenup_scaffold_shared',
 		script_url( 'shared', 'shared' ),
-		[],
-		TENUP_SCAFFOLD_VERSION,
+		array_merge( script_dependencies( 'shared' ), [] ), // Add any manual enqeues to the second array.
+		script_version( 'shared' ),
 		true
 	);
 
 	wp_enqueue_script(
 		'tenup_scaffold_admin',
 		script_url( 'admin', 'admin' ),
-		[],
-		TENUP_SCAFFOLD_VERSION,
+		array_merge( script_dependencies( 'admin' ), [] ), // Add any manual enqeues to the second array.
+		script_version( 'admin' ),
 		true
 	);
 

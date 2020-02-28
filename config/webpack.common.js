@@ -8,6 +8,7 @@ const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 const WebpackBar = require( 'webpackbar' );
 const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
+const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
 
 const isProduction = 'production' === process.env.NODE_ENV;
 
@@ -152,5 +153,8 @@ module.exports = {
 
 		// Fancy WebpackBar.
 		new WebpackBar(),
+		
+		// Extract depenencies
+		new DependencyExtractionWebpackPlugin( { injectPolyfill: true, combineAssets: true } ),
 	],
 };
