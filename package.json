@@ -41,10 +41,10 @@
     "url": "https://github.com/10up/plugin-scaffold"
   },
   "devDependencies": {
-    "@10up/eslint-config": "^2.0.3-next",
+    "@10up/babel-preset-default": "^1.0.0",
+    "@10up/eslint-config": "^2.0.0",
     "@10up/stylelint-config": "^1.0.9",
     "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
     "@babel/register": "^7.7.7",
     "@wordpress/eslint-plugin": "^4.1.0",
     "babel-eslint": "^10.0.3",
