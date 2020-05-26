@@ -90,7 +90,7 @@
     "webpackbar": "^4.0.0"
   },
   "engines": {
-    "node": ">=8.11"
+    "node": ">=12.0.0"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
