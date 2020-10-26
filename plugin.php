@@ -1,15 +1,17 @@
 <?php
 /**
- * Plugin Name: TenUpScaffold
+ * Plugin Name:       10up Plugin Scaffold
  * Plugin URI:
- * Description:
- * Version:     0.1.0
- * Author:      10up
- * Author URI:  https://10up.com
- * Text Domain: tenup-scaffold
- * Domain Path: /languages
+ * Description:       A brief description of the plugin.
+ * Version:           0.1.0
+ * Author:            10up
+ * Author URI:        https://10up.com
+ * License:           GPL v2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       tenup-scaffold
+ * Domain Path:       /languages
  *
- * @package TenUpScaffold
+ * @package           TenUpScaffold
  */
 
 // Useful global constants.
