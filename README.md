@@ -2,7 +2,7 @@
 
 > At 10up, we strive to provide digital products that yield a top-notch user experience. In order to improve both our efficiency and consistency, we need to standardize what we use and how we use it. This plugin scaffold allows us to share initial set up procedures to make sure all projects can get up and running as quickly as possible while closely adhering to 10up's high quality standards.
 
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level)
+[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![GPL-2.0-or-later License](https://img.shields.io/github/license/10up/plugin-scaffold.svg)](https://github.com/10up/plugin-scaffold/blob/master/LICENSE.md)
 
 ## Dependencies
 
@@ -125,6 +125,14 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Webpack merge](https://www.npmjs.com/package/webpack-merge)
 - [Webpackbar](https://www.npmjs.com/package/webpackbar)
 - [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer)
+
+## Frequently Asked Questions
+
+### A question that someone might have
+
+An answer to that question.
+
+![WordPress Admin Dashboard](.wordpress-org/screenshot-1.png "This screenshot description corresponds to screenshot-1.png in the /.wordpress-org directory.")
 
 ## Support Level
 
