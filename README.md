@@ -126,6 +126,12 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Webpackbar](https://www.npmjs.com/package/webpackbar)
 - [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer)
 
+## Frequently Asked Questions
+
+### A question that someone might have
+
+An answer to that question.
+
 ## Support Level
 
 **Active:** 10up is actively working on this, and we expect to continue work for the foreseeable future including keeping tested up to the most recent version of WordPress.  Bug reports, feature requests, questions, and pull requests are welcome.

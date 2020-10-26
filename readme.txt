@@ -23,6 +23,9 @@ A brief description of the plugin.
 
 == Frequently Asked Questions ==
 
+= A question that someone might have =
+
+An answer to that question.
 
 == Screenshots ==
 
