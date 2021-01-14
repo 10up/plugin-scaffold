@@ -33,6 +33,6 @@ register_deactivation_hook( __FILE__, '\TenUpScaffold\Core\deactivate' );
 TenUpScaffold\Core\setup();
 
 // Require Composer autoloader if it exists.
-if ( file_exists( TENUP_SCAFFOLD_PATH . '/vendor/autoload.php' ) ) {
+if ( file_exists( TENUP_SCAFFOLD_PATH . 'vendor/autoload.php' ) ) {
 	require_once TENUP_SCAFFOLD_PATH . 'vendor/autoload.php';
 }
